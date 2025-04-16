@@ -16,22 +16,25 @@ def register_Restaurant():
     main()
 
 def main():
-    os.system('cls')
-    print('Taste Express')
-    print('1. Register restaurant.')
-    print('2. List restaurants.')
-    print('3. Activate restaurant.')
-    print('4. Exit')
+    try:
+        os.system('cls')
+        print('Taste Express')
+        print('1. Register restaurant.')
+        print('2. List restaurants.')
+        print('3. Activate restaurant.')
+        print('4. Exit')
 
-    option = int(input('Choose an option: '))
-    if option == 1:
-        register_Restaurant()
-    elif option == 2:
-        list_restaurants()
-    elif option == 3:
-        print('Activate Restaurant')
-    else:
-        finish_app()
+        option = int(input('Choose an option: '))
+        if option == 1:
+            register_Restaurant()
+        elif option == 2:
+            list_restaurants()
+        elif option == 3:
+            print('Activate Restaurant')
+        else:
+            finish_app()
+    except:
+        print('Invalid option!')
 
 def list_restaurants():
     i = 1
