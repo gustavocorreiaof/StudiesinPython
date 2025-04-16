@@ -1,22 +1,32 @@
 import os
 
-print('Taste Express')
-print('1. Register restaurant.')
-print('2. List restaurants.')
-print('3. Activate restaurant.')
-print('4. Exit')
+restaurants = ["Casa Blanca", "Karatiuis", "InovaFit"]
 
-option = int(input('Choose an option: ')  )
+main()
 
 def finish_app():
     os.system('cls')
     print('Exit')
 
-if option == 1:
-    print('Register restaurant')
-elif option == 2:
-    print('List Restaurant')
-elif option == 3:
-    print('Activate Restaurant')
-else:
-    finish_app();
+def register_Restaurant():
+    os.system('cls')
+    new_restaurant = input('Enter the name of new restaurant:  ')
+    restaurants.append(new_restaurants)
+    main()
+
+def main():
+    print('Taste Express')
+    print('1. Register restaurant.')
+    print('2. List restaurants.')
+    print('3. Activate restaurant.')
+    print('4. Exit')
+
+    option = int(input('Choose an option: '))
+    if option == 1:
+        register_Restaurant()
+    elif option == 2:
+        print('List Restaurant')
+    elif option == 3:
+        print('Activate Restaurant')
+    else:
+        finish_app()
