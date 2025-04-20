@@ -1,4 +1,4 @@
-# # Beginner Level – Fundamentals (1 to 10)
+# # Beginner Level – Fundamentals (1 to 10) ==============================================================================================================================================================================================
 
 # #--1
 # print('Hello world!')
@@ -38,4 +38,32 @@
 # for num in range(1, 11):
 #     print(f'\nNumber: {tab * num}')
 
+# Beginner Level – Flow Control and Lists (11 to 20) ==============================================================================================================================================================================================
 
+# i = 1
+
+# while(i <=100):
+#     print(i)
+#     i+=1;
+
+# for num in range(1, 101):
+#     print(num)
+
+# lista = []
+
+# lista = input('Enter 5 numbers separated by spaces:  ').split()
+# lista = [int(num) for num in lista]
+
+# print(f'Entered numbers: {lista}')
+
+# even_count = sum(1 for num in lista if num % 2 == 0)
+
+# print(f'Even numbers: {even_count}')
+
+
+# word = input('Enter a word:  ')
+
+# for c in word:
+#     print(c)
+
+# print('Word in reverse:  ' + word[::-1])
