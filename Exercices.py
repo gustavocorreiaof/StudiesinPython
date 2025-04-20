@@ -1,36 +1,41 @@
-#--EXCERCICES 1
-# 
-# # print('Python in Alura programming school')
+# # Beginner Level – Fundamentals (1 to 10)
 
-# name = 'Gustavo';
-# age = 25;
-# print(f'My name is {name} and im {age} years old' );
+# #--1
+# print('Hello world!')
 
-# print("""
-# A
-# L
-# U
-# R
-# A""");
+# #--2
+# name = input('Enter your name: ')
+# print(f'Hello {name}')
 
-# pi = 3.14159;
+# #--3
+# number_1 = int(input('Enter a number: '))
+# number_2 = int(input('Enter another number: '))
+# print(f'Sum of both numbers: {number_1 + number_2}')
 
-# print(f'The pi raunded value is {pi:.2f}')
+# #--4
+# n_1 = int(input('Enter a number: '))
+# n_2 = int(input('Enter another number: '))
+# n_3 = int(input('Enter the last number: '))
+# print(f'The average of the numbers is: {(n_1 + n_2 + n_3) / 3}')
 
-#--EXCERCICES 2
+# #--5
+# number = int(input('Enter a number: '))
+# print("Even number" if number % 2 == 0 else "Odd number")
 
-# number = int(input('Insert a number: '));
+# #--6
+# for num in range(1, 51):
+#     if num % 2 == 0:
+#         print(num)
 
-# if number % 2 == 0:
-#     print('Even Number!')
-# else:
-#     print('Odd number!')
+# #--7
+# num = int(input('Enter a number: '))
+# print('Positive number!' if num > 0 else 'Negative number')
 
-# age = int(input('Insert your age: '))
+# #--10
+# tab = int(input('Enter a number: '))
+# print(f'Times table of number {tab}:')
 
-# if 0 <= age <= 12:
-#     print('Kid!')
-# elif 13 <= age <=18:
-#     print('Teenager')
-# else:
-#     print('Adult')
+# for num in range(1, 11):
+#     print(f'\nNumber: {tab * num}')
+
+
