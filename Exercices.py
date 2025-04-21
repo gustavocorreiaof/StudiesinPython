@@ -67,3 +67,53 @@
 #     print(c)
 
 # print('Word in reverse:  ' + word[::-1])
+
+# Intermediate Level – Functions, Modules, and Files (21 to 35) ===============================================================================================================================================================================================
+
+# import math
+
+# def factorial(n):
+#     print(f'The factorial of {n} is: {math.factorial(n)}')
+
+# n = int(input('Enter the number you want to know the factorial of:  '))
+
+# factorial(n)
+
+
+# my_set = {1, 2, 3, 3}
+
+# print(my_set)
+# print(f"My set count: {len(my_set)}")
+
+
+# numbers_list = input('Enter a list of numbers separated by spaces: ').split()
+# numbers_list = list(map(int, numbers_list))
+# sum_of_numbers = sum(numbers_list)
+
+# print(f'The average of these numbers is {sum_of_numbers / len(numbers_list)}')
+
+# print(f'Max number in the list: {max(numbers_list)}')
+# print(f'Min number in the list: {min(numbers_list)}')
+
+# sentence = input('Enter a sentence: ')
+
+# vowels = ('a', 'e', 'i', 'o', 'u')
+
+# count = 0
+
+# for char in sentence:
+#     if char in vowels:
+#         count += 1
+
+# print(f'The sentence contains: {count} vowels!')
+
+# how_many = int(input('Enter how many names you want to save: '))
+
+# names = []
+
+# for n in range(how_many):
+#     names.append(input('Enter a name: '))
+
+# with open('names.txt', 'w', encoding='utf-8') as file:
+#     for name in names:
+#         file.write(name + '\n')
