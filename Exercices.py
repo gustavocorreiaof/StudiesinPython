@@ -117,3 +117,22 @@
 # with open('names.txt', 'w', encoding='utf-8') as file:
 #     for name in names:
 #         file.write(name + '\n')
+
+with open('file.txt', 'r', encoding='utf-8') as f:
+    conteudo = f.read()
+    print(conteudo)
+
+import json
+
+dados = {"name": "João", "age": 30, "city": "São Paulo"}
+
+with open('date.json', 'w', encoding='utf-8') as f:
+    json.dump(dados, f, ensure_ascii=False, indent=4)
+
+import json
+
+with open('users.json', 'r', encoding='utf-8') as f:
+    usuarios = json.load(f)
+    for usuario in usuarios:
+        print(f"Name: {usuario['name']}, Age: {usuario['age']}")
+        
