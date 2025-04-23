@@ -118,21 +118,46 @@
 #     for name in names:
 #         file.write(name + '\n')
 
-with open('file.txt', 'r', encoding='utf-8') as f:
-    conteudo = f.read()
-    print(conteudo)
+# with open('file.txt', 'r', encoding='utf-8') as f:
+#     conteudo = f.read()
+#     print(conteudo)
 
-import json
+# import json
 
-dados = {"name": "João", "age": 30, "city": "São Paulo"}
+# dados = {"name": "João", "age": 30, "city": "São Paulo"}
 
-with open('date.json', 'w', encoding='utf-8') as f:
-    json.dump(dados, f, ensure_ascii=False, indent=4)
+# with open('date.json', 'w', encoding='utf-8') as f:
+#      json.dump(dados, f, ensure_ascii=False, indent=4)
 
-import json
-
-with open('users.json', 'r', encoding='utf-8') as f:
-    usuarios = json.load(f)
-    for usuario in usuarios:
-        print(f"Name: {usuario['name']}, Age: {usuario['age']}")
+# import json
+ 
+# with open('users.json', 'r', encoding='utf-8') as f:
+#     usuarios = json.load(f)
+#     for usuario in usuarios:
+#         print(f"Name: {usuario['name']}, Age: {usuario['age']}")
         
+dictionarie = [{"Name": "Gustavo", "Age": 25, "City": "Ipaporanga"}, 
+               {"Name": "Alessandro", "Age": 25, "City": "Crateus"}, 
+               {"Name": "Italo", "Age": 18, "City": "Russas"}]
+
+validAction = True
+options = {"1", "2", "3"}
+option = '1'
+user = 'Miros'
+
+while(validAction):
+    option = input('Insert a option: 1, 2, 3')
+
+    if(option in options):
+        validAction = False
+
+validUser = True
+
+while(validUser):
+    user = input('Insert a user: "Gustavo", "Alessandro", "Italo"')
+
+    if(any(user.lower() in person["Name"].lower() for person in dictionarie)):
+        validAction = False
+
+with open('log.txt', 'r', encoding='utf-8') as f:
+    f.write(f"User: {user} choose the option {option}")
