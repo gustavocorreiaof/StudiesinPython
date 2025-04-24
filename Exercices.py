@@ -157,7 +157,7 @@ while(validUser):
     user = input('Insert a user: "Gustavo", "Alessandro", "Italo"')
 
     if(any(user.lower() in person["Name"].lower() for person in dictionarie)):
-        validAction = False
+        validUser = False
 
-with open('log.txt', 'r', encoding='utf-8') as f:
+with open('log.txt', 'w', encoding='utf-8') as f:
     f.write(f"User: {user} choose the option {option}")
