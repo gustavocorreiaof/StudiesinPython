@@ -181,25 +181,57 @@
 # else:
 #     print("There is no such person")
 
-class BankAccount:
-    def __init__(self, initial_amount):
-        self.balance = float(initial_amount)
+# class BankAccount:
+#     def __init__(self, initial_amount):
+#         self.balance = float(initial_amount)
 
-    def deposit(self, amount):
-        self.balance += float(amount)
-        self.show_balance()
+#     def deposit(self, amount):
+#         self.balance += float(amount)
+#         self.show_balance()
 
-    def withdraw(self, amount):
-        self.balance -= float(amount)
-        self.show_balance()
+#     def withdraw(self, amount):
+#         self.balance -= float(amount)
+#         self.show_balance()
 
-    def show_balance(self):
-        print(f'Current account balance: {self.balance}')
+#     def show_balance(self):
+#         print(f'Current account balance: {self.balance}')
 
-account = BankAccount(100)
+# account = BankAccount(100)
 
-account.show_balance()
+# account.show_balance()
 
-account.deposit(200)
+# account.deposit(200)
 
-account.withdraw(25)
+# account.withdraw(25)
+
+
+# class Pessoa:
+#     def __init__(self, nome, idade):
+#           self.nome = nome
+#           self.idade = idade
+    
+#     def apresentar(self):
+#         print(f"Meu nome é {self.nome}, e tenho idade {self.idade}!")
+
+# class Funcionario(Pessoa):
+#      def __init__(self, nome, idade, salario, cargo):
+#           super().__init__(nome, idade)
+#           self.salario = salario
+#           self.cargo = cargo
+    
+#      def apresentar(self):
+#           super().apresentar()
+#           print(f'Tenho o cargo de {self.cargo} ganhando {self.salario}')
+
+
+# funcionario = Funcionario("Gustavo", 25, 1200, "Desenvolvedor")
+
+# funcionario.apresentar()
+
+try:
+    n1 = 2
+    n2 = 0
+
+    n3 = n1/n2
+except ZeroDivisionError as e:
+    print(f'Deu erro ai em {e}')
