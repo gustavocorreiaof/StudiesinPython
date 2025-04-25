@@ -136,28 +136,70 @@
 #     for usuario in usuarios:
 #         print(f"Name: {usuario['name']}, Age: {usuario['age']}")
         
-dictionarie = [{"Name": "Gustavo", "Age": 25, "City": "Ipaporanga"}, 
-               {"Name": "Alessandro", "Age": 25, "City": "Crateus"}, 
-               {"Name": "Italo", "Age": 18, "City": "Russas"}]
+# dictionarie = [{"Name": "Gustavo", "Age": 25, "City": "Ipaporanga"}, 
+#                {"Name": "Alessandro", "Age": 25, "City": "Crateus"}, 
+#                {"Name": "Italo", "Age": 18, "City": "Russas"}]
 
-validAction = True
-options = {"1", "2", "3"}
-option = '1'
-user = 'Miros'
+# validAction = True
+# options = {"1", "2", "3"}
+# option = '1'
+# user = 'Miros'
 
-while(validAction):
-    option = input('Insert a option: 1, 2, 3')
+# while(validAction):
+#     option = input('Insert a option: 1, 2, 3')
 
-    if(option in options):
-        validAction = False
+#     if(option in options):
+#         validAction = False
 
-validUser = True
+# validUser = True
 
-while(validUser):
-    user = input('Insert a user: "Gustavo", "Alessandro", "Italo"')
+# while(validUser):
+#     user = input('Insert a user: "Gustavo", "Alessandro", "Italo"')
 
-    if(any(user.lower() in person["Name"].lower() for person in dictionarie)):
-        validUser = False
+#     if(any(user.lower() in person["Name"].lower() for person in dictionarie)):
+#         validUser = False
 
-with open('log.txt', 'w', encoding='utf-8') as f:
-    f.write(f"User: {user} choose the option {option}")
+# with open('log.txt', 'w', encoding='utf-8') as f:
+#     f.write(f"User: {user} choose the option {option}")
+
+#Advanced Level – Dictionaries, OOP, Errors (36 to 45)========================================================================================================================
+# dictionary = [{"Name": "Alessandro", "Age": 26},
+#               {"Name": "Alairton", "Age": 23+1},
+#               {"Name": "Aligator", "Age": 25},
+#               {"Name": "MTT", "Age": 26},
+#               {"Name": "Miros", "Age": 25}]
+
+# print(len(dictionary))
+
+# name = 'Alessandro'  # input('Enter the name of the person to search: ')
+
+# has_person_in_dictionary = any(name.lower() in person["Name"].lower() for person in dictionary)
+
+# if has_person_in_dictionary:
+#     person = next((v for v in dictionary if v["Name"] == name), None)
+#     print(f'There is a person with age {person["Age"]}')
+# else:
+#     print("There is no such person")
+
+class BankAccount:
+    def __init__(self, initial_amount):
+        self.balance = float(initial_amount)
+
+    def deposit(self, amount):
+        self.balance += float(amount)
+        self.show_balance()
+
+    def withdraw(self, amount):
+        self.balance -= float(amount)
+        self.show_balance()
+
+    def show_balance(self):
+        print(f'Current account balance: {self.balance}')
+
+account = BankAccount(100)
+
+account.show_balance()
+
+account.deposit(200)
+
+account.withdraw(25)
