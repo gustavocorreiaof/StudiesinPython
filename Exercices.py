@@ -339,3 +339,11 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+
+import random
+
+nomes = ["Alice", "Bruno", "Carla", "Daniel", "Eduarda", "Felipe"]
+
+nome_sorteado = random.choice(nomes)
+
+print(f"O nome sorteado foi: {nome_sorteado}")
