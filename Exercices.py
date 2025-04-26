@@ -228,10 +228,59 @@
 
 # funcionario.apresentar()
 
-try:
-    n1 = 2
-    n2 = 0
+# try:
+#     n1 = 2
+#     n2 = 0
 
-    n3 = n1/n2
-except ZeroDivisionError as e:
-    print(f'Deu erro ai em {e}')
+#     n3 = n1/n2
+# except ZeroDivisionError as e:
+#     print(f'Deu erro ai em {e}')
+
+def exibir_menu():
+    print("\nAgenda de Contatos")
+    print("1. Adicionar contato")
+    print("2. Remover contato")
+    print("3. Listar contatos")
+    print("4. Sair")
+
+def adicionar_contato(agenda):
+    nome = input("Digite o nome do contato: ")
+    telefone = input("Digite o telefone: ")
+    agenda[nome] = telefone
+    print(f"Contato '{nome}' adicionado com sucesso!")
+
+def remover_contato(agenda):
+    nome = input("Digite o nome do contato que deseja remover: ")
+    if nome in agenda:
+        del agenda[nome]
+        print(f"Contato '{nome}' removido com sucesso!")
+    else:
+        print("Contato não encontrado.")
+
+def listar_contatos(agenda):
+    if agenda:
+        print("\nLista de Contatos:")
+        for nome, telefone in agenda.items():
+            print(f"Nome: {nome}, Telefone: {telefone}")
+    else:
+        print("A agenda está vazia.")
+
+def main():
+    agenda = {}
+    while True:
+        exibir_menu()
+        escolha = input("Escolha uma opção: ")
+        if escolha == "1":
+            adicionar_contato(agenda)
+        elif escolha == "2":
+            remover_contato(agenda)
+        elif escolha == "3":
+            listar_contatos(agenda)
+        elif escolha == "4":
+            print("Saindo da agenda. Até logo!")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    main()
