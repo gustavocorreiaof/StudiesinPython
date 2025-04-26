@@ -284,3 +284,58 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    import os
+
+ARQUIVO_USUARIOS = "usuarios.txt"
+
+def carregar_usuarios():
+    usuarios = {}
+    if os.path.exists(ARQUIVO_USUARIOS):
+        with open(ARQUIVO_USUARIOS, "r") as f:
+            for linha in f:
+                nome, senha = linha.strip().split(",")
+                usuarios[nome] = senha
+    return usuarios
+
+def salvar_usuario(nome, senha):
+    with open(ARQUIVO_USUARIOS, "a") as f:
+        f.write(f"{nome},{senha}\n")
+
+def cadastrar(usuarios):
+    nome = input("Digite um nome de usuário: ")
+    if nome in usuarios:
+        print("Usuário já existe.")
+        return
+    senha = input("Digite uma senha: ")
+    usuarios[nome] = senha
+    salvar_usuario(nome, senha)
+    print("Cadastro realizado com sucesso!")
+
+def login(usuarios):
+    nome = input("Digite seu usuário: ")
+    senha = input("Digite sua senha: ")
+    if nome in usuarios and usuarios[nome] == senha:
+        print("Login bem-sucedido! Seja bem-vindo.")
+    else:
+        print("Usuário ou senha incorretos.")
+
+def menu():
+    usuarios = carregar_usuarios()
+    while True:
+        print("\n1. Cadastrar")
+        print("2. Login")
+        print("3. Sair")
+        opcao = input("Escolha uma opção: ")
+        if opcao == "1":
+            cadastrar(usuarios)
+        elif opcao == "2":
+            login(usuarios)
+        elif opcao == "3":
+            print("Saindo...")
+            break
+        else:
+            print("Opção inválida!")
+
+if __name__ == "__main__":
+    menu()
