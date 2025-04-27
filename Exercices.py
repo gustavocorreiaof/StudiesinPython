@@ -319,16 +319,17 @@
 
 # print('Senha gerada: ' + senha)
 
-import requests 
+# import requests 
 
-url = "https://official-joke-api.appspot.com/random_joke"
+# url = "https://official-joke-api.appspot.com/random_joke"
 
-response = requests.get(url)
+# response = requests.get(url)
 
-if response.status_code == 200:
-    piada = response.json()
-    print("Aqui vai uma piada:")
-    print(piada['setup'])   # Começo da piada
-    print(piada['punchline'])  # Final engraçado
-else:
-    print("Erro ao buscar piada:", response.status_code)
+# if response.status_code == 200:
+#     piada = response.json()
+#     print("Aqui vai uma piada:")
+#     print(piada['setup'])   # Começo da piada
+#     print(piada['punchline'])  # Final engraçado
+# else:
+#     print("Erro ao buscar piada:", response.status_code)
+

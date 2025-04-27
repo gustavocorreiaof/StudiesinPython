@@ -1,7 +1,4 @@
 🔵 Nível Especialista – Bibliotecas, APIs, Regex e mais (46 a 50)
-Use datetime para mostrar a data e hora atuais formatadas.
-
-Consuma uma API pública (como a de piadas ou previsão do tempo) usando requests.
 
 Converta um arquivo .txt com nomes para .csv.
 
