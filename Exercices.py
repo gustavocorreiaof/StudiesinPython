@@ -236,114 +236,50 @@
 # except ZeroDivisionError as e:
 #     print(f'Deu erro ai em {e}')
 
-def exibir_menu():
-    print("\nAgenda de Contatos")
-    print("1. Adicionar contato")
-    print("2. Remover contato")
-    print("3. Listar contatos")
-    print("4. Sair")
+# import os
 
-def adicionar_contato(agenda):
-    nome = input("Digite o nome do contato: ")
-    telefone = input("Digite o telefone: ")
-    agenda[nome] = telefone
-    print(f"Contato '{nome}' adicionado com sucesso!")
+# agenda = [{"Nome": "Gustavo", "Numero": "88981165549"},
+#           {"Nome": "Manel", "Numero": "88888888888"},
+#           {"Nome": "Aligator", "Numero": "88981165549"}]
 
-def remover_contato(agenda):
-    nome = input("Digite o nome do contato que deseja remover: ")
-    if nome in agenda:
-        del agenda[nome]
-        print(f"Contato '{nome}' removido com sucesso!")
-    else:
-        print("Contato não encontrado.")
+# def funcoes():
+#     print('1 - Adicionar')
+#     print('2 - Remover')
+#     print('3 - Listar')
+#     print('4 - Sair')
 
-def listar_contatos(agenda):
-    if agenda:
-        print("\nLista de Contatos:")
-        for nome, telefone in agenda.items():
-            print(f"Nome: {nome}, Telefone: {telefone}")
-    else:
-        print("A agenda está vazia.")
+# def adicionar_contato():
+#     nome = input('Digite o nome do contato:  ')
+#     numero = input('Digite o numero do contato:  ')
 
-def main():
-    agenda = {}
-    while True:
-        exibir_menu()
-        escolha = input("Escolha uma opção: ")
-        if escolha == "1":
-            adicionar_contato(agenda)
-        elif escolha == "2":
-            remover_contato(agenda)
-        elif escolha == "3":
-            listar_contatos(agenda)
-        elif escolha == "4":
-            print("Saindo da agenda. Até logo!")
-            break
-        else:
-            print("Opção inválida. Tente novamente.")
+#     agenda.append({"Nome": nome, "Numero": numero})
 
-if __name__ == "__main__":
-    main()
+# def remover():
+#     nome = input('Digite o nome do contato que deseja apagar: ')
+#     contato_a_remover = next((contato for contato in agenda if contato["Nome"] == nome), None)
 
-    import os
+#     if contato_a_remover:
+#         agenda.remove(contato_a_remover)
+#     else:
+#         print('Contato inexistente!')
 
-ARQUIVO_USUARIOS = "usuarios.txt"
+# def listar():
+#     for contato in agenda:
+#         print(f'Nome do contato: {contato["Nome"]} com o numero: {contato["Numero"]}')
 
-def carregar_usuarios():
-    usuarios = {}
-    if os.path.exists(ARQUIVO_USUARIOS):
-        with open(ARQUIVO_USUARIOS, "r") as f:
-            for linha in f:
-                nome, senha = linha.strip().split(",")
-                usuarios[nome] = senha
-    return usuarios
+# option = 1;
+# while(option != 4):
+#     funcoes()
+#     option = int(input('Digite uma opção: '))
 
-def salvar_usuario(nome, senha):
-    with open(ARQUIVO_USUARIOS, "a") as f:
-        f.write(f"{nome},{senha}\n")
+#     os.system('cls')
+#     if option == 1:
+#         adicionar_contato()
+#     elif option == 2:
+#         remover()
+#     elif option == 3:
+#             listar()
+#     else:
+#         input('Opção invalida tente novamente')
 
-def cadastrar(usuarios):
-    nome = input("Digite um nome de usuário: ")
-    if nome in usuarios:
-        print("Usuário já existe.")
-        return
-    senha = input("Digite uma senha: ")
-    usuarios[nome] = senha
-    salvar_usuario(nome, senha)
-    print("Cadastro realizado com sucesso!")
 
-def login(usuarios):
-    nome = input("Digite seu usuário: ")
-    senha = input("Digite sua senha: ")
-    if nome in usuarios and usuarios[nome] == senha:
-        print("Login bem-sucedido! Seja bem-vindo.")
-    else:
-        print("Usuário ou senha incorretos.")
-
-def menu():
-    usuarios = carregar_usuarios()
-    while True:
-        print("\n1. Cadastrar")
-        print("2. Login")
-        print("3. Sair")
-        opcao = input("Escolha uma opção: ")
-        if opcao == "1":
-            cadastrar(usuarios)
-        elif opcao == "2":
-            login(usuarios)
-        elif opcao == "3":
-            print("Saindo...")
-            break
-        else:
-            print("Opção inválida!")
-
-if __name__ == "__main__":
-    menu()
-
-import random
-
-nomes = ["Alice", "Bruno", "Carla", "Daniel", "Eduarda", "Felipe"]
-
-nome_sorteado = random.choice(nomes)
-
-print(f"O nome sorteado foi: {nome_sorteado}")

@@ -1,7 +1,4 @@
-
 🟣 Nível Avançado – Dicionários, POO, Erros (36 a 45)
-
-Faça uma agenda onde o usuário possa adicionar, remover e listar contatos (usando dicionários).
 
 Crie um sistema simples de login e senha (com persistência em arquivo).
 
