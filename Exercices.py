@@ -304,17 +304,31 @@
 
 # print(f'O nome sorteado é:  {random.choice(lista)}')
 
-import string
-import random
+# import string
+# import random
 
-letras = string.ascii_letters
-numeros = string.digits
-simbolos = string.punctuation
+# letras = string.ascii_letters
+# numeros = string.digits
+# simbolos = string.punctuation
 
-todos_os_caracteres =  letras + numeros + simbolos
+# todos_os_caracteres =  letras + numeros + simbolos
 
-tamanho_da_senha = random.randrange(8, 12)
+# tamanho_da_senha = random.randrange(8, 12)
 
-senha = ''.join(random.choice(todos_os_caracteres) for _ in range(tamanho_da_senha))
+# senha = ''.join(random.choice(todos_os_caracteres) for _ in range(tamanho_da_senha))
 
-print('Senha gerada: ' + senha)
+# print('Senha gerada: ' + senha)
+
+import requests 
+
+url = "https://official-joke-api.appspot.com/random_joke"
+
+response = requests.get(url)
+
+if response.status_code == 200:
+    piada = response.json()
+    print("Aqui vai uma piada:")
+    print(piada['setup'])   # Começo da piada
+    print(piada['punchline'])  # Final engraçado
+else:
+    print("Erro ao buscar piada:", response.status_code)
