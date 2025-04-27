@@ -1,12 +1,6 @@
 🔵 Nível Especialista – Bibliotecas, APIs, Regex e mais (46 a 50)
 Use datetime para mostrar a data e hora atuais formatadas.
 
-Use random para sortear nomes de uma lista.
-
-Gere uma senha aleatória com letras, números e símbolos.
-
-Use re (expressões regulares) para validar um e-mail digitado pelo usuário.
-
 Consuma uma API pública (como a de piadas ou previsão do tempo) usando requests.
 
 Converta um arquivo .txt com nomes para .csv.

@@ -297,3 +297,24 @@
 
 # carrega_usuarios()
 # mostra()
+
+# import random
+
+# lista = ["Alerrandro", "Ronaldinho", "Bilbo", "Frodo", "Gandalf"]
+
+# print(f'O nome sorteado é:  {random.choice(lista)}')
+
+import string
+import random
+
+letras = string.ascii_letters
+numeros = string.digits
+simbolos = string.punctuation
+
+todos_os_caracteres =  letras + numeros + simbolos
+
+tamanho_da_senha = random.randrange(8, 12)
+
+senha = ''.join(random.choice(todos_os_caracteres) for _ in range(tamanho_da_senha))
+
+print('Senha gerada: ' + senha)
