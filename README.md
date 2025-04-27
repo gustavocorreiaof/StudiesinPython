@@ -1,7 +1,3 @@
-🟣 Nível Avançado – Dicionários, POO, Erros (36 a 45)
-
-Crie um sistema simples de login e senha (com persistência em arquivo).
-
 🔵 Nível Especialista – Bibliotecas, APIs, Regex e mais (46 a 50)
 Use datetime para mostrar a data e hora atuais formatadas.
 

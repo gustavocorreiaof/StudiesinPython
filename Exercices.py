@@ -282,4 +282,18 @@
 #     else:
 #         input('Opção invalida tente novamente')
 
+# import json
 
+# usuarios = []
+
+# def carrega_usuarios():
+#     global usuarios
+#     with open('login.json', 'r', encoding='utf-8') as f:
+#         usuarios = json.load(f)
+
+# def mostra():
+#     for usuario in usuarios:
+#         print(f'Usuario-> {usuario["Login"]}, senha -> {usuario["Senha"]}')
+
+# carrega_usuarios()
+# mostra()
