@@ -333,3 +333,15 @@
 # else:
 #     print("Erro ao buscar piada:", response.status_code)
 
+import csv
+
+with open('nomes.txt', 'r', encoding='utf-8') as txt_file:
+    nomes = [linha.strip() for linha in txt_file]
+
+with open('nomes.csv', 'w', newline='', encoding='utf-8') as csv_file:
+    writer = csv.writer(csv_file)
+    writer.writerow(['Nome'])  
+    for nome in nomes:
+        writer.writerow([nome])
+
+print("Conversão concluída!")
