@@ -335,13 +335,26 @@
 
 import csv
 
-with open('nomes.txt', 'r', encoding='utf-8') as txt_file:
-    nomes = [linha.strip() for linha in txt_file]
+# with open('nomes.txt', 'r', encoding='utf-8') as txt_file:
+#     nomes = [linha.strip() for linha in txt_file]
 
-with open('nomes.csv', 'w', newline='', encoding='utf-8') as csv_file:
-    writer = csv.writer(csv_file)
-    writer.writerow(['Nome'])  
-    for nome in nomes:
-        writer.writerow([nome])
+# with open('nomes.csv', 'w', newline='', encoding='utf-8') as csv_file:
+#     writer = csv.writer(csv_file)
+#     writer.writerow(['Nome'])  
+#     for nome in nomes:
+#         writer.writerow([nome])
 
-print("Conversão concluída!")
+# print("Conversão concluída!")
+
+
+# with open('vendas.csv', 'r', encoding='utf-8') as file:
+#     reader = csv.reader(file) #cria como se fosse um array de linhas
+#     next(reader) #pula a primeira linha ou o cabeçalho
+
+#     valor = 0
+
+#     for row in reader: #para cada linha do array
+#         valor += float(row[1])
+
+#     print(f'Valor vendido: {valor}')
+
