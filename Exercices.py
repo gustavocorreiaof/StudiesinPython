@@ -358,3 +358,48 @@ import csv
 
 #     print(f'Valor vendido: {valor}')
 
+import matplotlib.pyplot as plt
+from datetime import datetime
+
+tarefas_concluidas = {
+    '2025-04-25': 5,
+    '2025-04-26': 8,
+    '2025-04-27': 6,
+    '2025-04-28': 10,
+    '2025-04-29': 7,
+}
+
+datas = [datetime.strptime(data, '%Y-%m-%d') for data in tarefas_concluidas.keys()]
+quantidades = list(tarefas_concluidas.values())
+
+# Cria uma nova figura com tamanho 10x5 polegadas
+plt.figure(figsize=(10, 5))
+
+# Plota os dados com:
+# - datas no eixo x
+# - quantidades no eixo y
+# - 'o' para marcar os pontos
+# - linha contínua '-'
+# - cor azul
+plt.plot(datas, quantidades, marker='o', linestyle='-', color='purple')
+
+# Define o título do gráfico
+plt.title('Tarefas Concluídas por Dia')
+
+# Define o rótulo (label) do eixo X
+plt.xlabel('Data')
+
+# Define o rótulo (label) do eixo Y
+plt.ylabel('Quantidade de Tarefas')
+
+# Adiciona uma grade ao fundo do gráfico para facilitar a leitura
+plt.grid(True)
+
+# Rotaciona os rótulos das datas no eixo X para 45 graus (melhora a legibilidade)
+plt.xticks(rotation=45)
+
+# Ajusta automaticamente o layout para evitar sobreposição dos elementos
+plt.tight_layout()
+
+# Exibe o gráfico na tela
+plt.show()
