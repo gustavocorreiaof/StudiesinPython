@@ -1,3 +1,5 @@
+Rapositorio criado para meus estudos em python.
+
 🔵 Nível Especialista – Bibliotecas, APIs, Regex e mais (46 a 50)
 
 Crie um sistema de cadastro com interface de linha de comando, usando arquivos para persistência.
