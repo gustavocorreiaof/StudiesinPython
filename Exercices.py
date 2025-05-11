@@ -403,3 +403,95 @@ plt.tight_layout()
 
 # Exibe o gráfico na tela
 plt.show()
+
+import json
+import os
+
+ARQUIVO = 'usuarios.json'
+
+
+def carregar_usuarios():
+    if not os.path.exists(ARQUIVO):
+        return []
+    with open(ARQUIVO, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def salvar_usuarios(usuarios):
+    with open(ARQUIVO, 'w', encoding='utf-8') as f:
+        json.dump(usuarios, f, indent=4)
+
+
+def cadastrar_usuario():
+    nome = input("Nome: ")
+    email = input("Email: ")
+    idade = input("Idade: ")
+
+    usuarios = carregar_usuarios()
+
+
+    if any(user['email'] == email for user in usuarios):
+        print("Usuário com esse email já existe.")
+        return
+
+    usuarios.append({'nome': nome, 'email': email, 'idade': idade})
+    salvar_usuarios(usuarios)
+    print("Usuário cadastrado com sucesso!")
+
+
+def listar_usuarios():
+    usuarios = carregar_usuarios()
+    if not usuarios:
+        print("Nenhum usuário cadastrado.")
+    else:
+        for i, user in enumerate(usuarios, start=1):
+            print(f"{i}. {user['nome']} - {user['email']} - {user['idade']} anos")
+
+
+def buscar_usuario():
+    email = input("Digite o email do usuário: ")
+    usuarios = carregar_usuarios()
+    for user in usuarios:
+        if user['email'] == email:
+            print(f"Nome: {user['nome']}, Idade: {user['idade']}")
+            return
+    print("Usuário não encontrado.")
+
+def remover_usuario():
+    email = input("Digite o email do usuário a remover: ")
+    usuarios = carregar_usuarios()
+    novos_usuarios = [user for user in usuarios if user['email'] != email]
+
+    if len(novos_usuarios) == len(usuarios):
+        print("Usuário não encontrado.")
+    else:
+        salvar_usuarios(novos_usuarios)
+        print("Usuário removido com sucesso.")
+
+def menu():
+    while True:
+        print("\n--- Sistema de Cadastro ---")
+        print("1. Cadastrar usuário")
+        print("2. Listar usuários")
+        print("3. Buscar usuário por email")
+        print("4. Remover usuário")
+        print("5. Sair")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == '1':
+            cadastrar_usuario()
+        elif opcao == '2':
+            listar_usuarios()
+        elif opcao == '3':
+            buscar_usuario()
+        elif opcao == '4':
+            remover_usuario()
+        elif opcao == '5':
+            print("Encerrando o programa.")
+            break
+        else:
+            print("Opção inválida!")
+
+if __name__ == '__main__':
+    menu()
