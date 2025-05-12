@@ -495,3 +495,73 @@ def menu():
 
 if __name__ == '__main__':
     menu()
+
+class Livro:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+        self.disponivel = True
+
+    def emprestar(self):
+        if self.disponivel:
+            self.disponivel = False
+            print(f'O livro "{self.titulo}" foi emprestado.')
+        else:
+            print(f'O livro "{self.titulo}" não está disponível.')
+
+    def devolver(self):
+        if not self.disponivel:
+            self.disponivel = True
+            print(f'O livro "{self.titulo}" foi devolvido.')
+        else:
+            print(f'O livro "{self.titulo}" já está disponível.')
+
+    def __str__(self):
+        status = "Disponível" if self.disponivel else "Emprestado"
+        return f'"{self.titulo}" por {self.autor} - {status}'
+
+
+class Biblioteca:
+    def __init__(self):
+        self.livros = []
+
+    def adicionar_livro(self, livro):
+        self.livros.append(livro)
+        print(f'Livro "{livro.titulo}" adicionado à biblioteca.')
+
+    def listar_livros(self):
+        print("\n📚 Lista de livros na biblioteca:")
+        for livro in self.livros:
+            print(f"- {livro}")
+
+    def emprestar_livro(self, titulo):
+        for livro in self.livros:
+            if livro.titulo.lower() == titulo.lower():
+                livro.emprestar()
+                return
+        print(f'Livro "{titulo}" não encontrado.')
+
+    def devolver_livro(self, titulo):
+        for livro in self.livros:
+            if livro.titulo.lower() == titulo.lower():
+                livro.devolver()
+                return
+        print(f'Livro "{titulo}" não encontrado.')
+
+if __name__ == "__main__":
+    biblioteca = Biblioteca()
+
+    livro1 = Livro("1984", "George Orwell")
+    livro2 = Livro("Dom Casmurro", "Machado de Assis")
+
+    biblioteca.adicionar_livro(livro1)
+    biblioteca.adicionar_livro(livro2)
+
+    biblioteca.listar_livros()
+
+    biblioteca.emprestar_livro("1984")
+    biblioteca.listar_livros()
+
+    biblioteca.devolver_livro("1984")
+    biblioteca.listar_livros()
+
